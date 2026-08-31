@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "source": {
+    "id": "lionsr-mipstarre-507e8122",
+    "repository": "LionSR/MIPStarRE",
+    "repository_url": "https://github.com/LionSR/MIPStarRE",
+    "commit": "507e81220d95266ff3d589d125b2f87c7300a9fb",
+    "archive_url": "https://codeload.github.com/LionSR/MIPStarRE/tar.gz/507e81220d95266ff3d589d125b2f87c7300a9fb",
+    "acquisition_evidence": "workflow/reviews/qpbt-010-reference-transport.md"
+  },
+  "rights": {
+    "license_file": null,
+    "redistribution_permission": "not-established",
+    "policy": "Materialize locally from the exact authenticated archive; do not track or vendor upstream source bytes and do not imply a license grant."
+  },
+  "archive": {
+    "format": "gzip-ustar-with-exact-global-pax-comment",
+    "sha256": "656d92a4ad1fb24216ab0b26c6956b1cfb88ba7816257baa0e668415c0a7adcc",
+    "bytes": 1989153,
+    "tar_sha256": "4e4850855ac74b63cb9ef292281462174da776628a6278006f3728c9458a1d39",
+    "tar_bytes": 10752000,
+    "exact_prefix": "MIPStarRE-507e81220d95266ff3d589d125b2f87c7300a9fb/",
+    "global_pax_comment": "507e81220d95266ff3d589d125b2f87c7300a9fb",
+    "members": 839,
+    "regular_files": 702,
+    "directories": 137,
+    "regular_bytes": 10139292,
+    "max_member_bytes": 119292
+  },
+  "output": {
+    "path": "MIPStarRE",
+    "archive_subtree": "MIPStarRE/",
+    "reserved_authored_subtree": "QPBT/",
+    "directories": 105,
+    "files": 337,
+    "bytes": 5970111,
+    "max_file_bytes": 49182,
+    "inventory_sha256": "d8d9e7632f5dcdb0cbe7bceeb55c71a0dbbcf6f901c6efd7f4c4814090d096db"
+  },
+  "lean_pins": {
+    "toolchain": "leanprover/lean4:v4.32.0",
+    "mathlib_input_revision": "v4.32.0",
+    "mathlib_commit": "81a5d257c8e410db227a6665ed08f64fea08e997"
+  },
+  "foundations": [
+    {
+      "module": "MIPStarRE.Quantum.Measurement",
+      "path": "MIPStarRE/Quantum/Measurement.lean",
+      "sha256": "c84a712e34425a46ae17d9f04d789ae7393ae97da3cf7ee3f93fe0e6705b9d0d",
+      "purpose": "finite-dimensional measurement vocabulary"
+    },
+    {
+      "module": "MIPStarRE.LDT.Basic.QuantumState",
+      "path": "MIPStarRE/LDT/Basic/QuantumState.lean",
+      "sha256": "0f1c3136b7145c06640b9afeee849b0dd214ff51b4a96247552fbc35e75f0008",
+      "purpose": "quantum states, strategies, and state-distance infrastructure"
+    },
+    {
+      "module": "MIPStarRE.LDT.Preliminaries.DistanceBounds",
+      "path": "MIPStarRE/LDT/Preliminaries/DistanceBounds.lean",
+      "sha256": "d21163bfc5e6a6c4e63901d8ee958180491be6d9b928ab01de2155757f434269",
+      "purpose": "operator and state-dependent distance estimates"
+    },
+    {
+      "module": "MIPStarRE.LDT.Preliminaries.FiniteFields",
+      "path": "MIPStarRE/LDT/Preliminaries/FiniteFields.lean",
+      "sha256": "a5638019a186bac31836c64855c09987b3fc864bc477170ed740b2b59b7b6419",
+      "purpose": "finite-field trace and Fourier foundations"
+    },
+    {
+      "module": "MIPStarRE.LDT.MakingMeasurementsProjective.NaimarkCore",
+      "path": "MIPStarRE/LDT/MakingMeasurementsProjective/NaimarkCore.lean",
+      "sha256": "fc408bf59285d26f6f5796cb5bd2a3e7334291126e19b1a3f002fbcea7ed3de6",
+      "purpose": "Naimark dilation core"
+    },
+    {
+      "module": "MIPStarRE.LDT.MakingMeasurementsProjective.NaimarkFull",
+      "path": "MIPStarRE/LDT/MakingMeasurementsProjective/NaimarkFull.lean",
+      "sha256": "1da5bbec24af6c09f3409beb0a0e72574ac68a478020316fa03484ea37871c2b",
+      "purpose": "finite-family projectivization"
+    },
+    {
+      "module": "MIPStarRE.LDT.MakingMeasurementsProjective.Orthonormalization",
+      "path": "MIPStarRE/LDT/MakingMeasurementsProjective/Orthonormalization.lean",
+      "sha256": "04c37433f8739bafe9579c4bd3f42d1da06f70a1a012d47cbc1311c72d4e579d",
+      "purpose": "orthonormalization estimates"
+    },
+    {
+      "module": "MIPStarRE.LDT.Test.StrategyBiProj.Measurements",
+      "path": "MIPStarRE/LDT/Test/StrategyBiProj/Measurements.lean",
+      "sha256": "2fb6bb86464e380e27efc6025c4d0b99b9937006f5ef5eb6e0e6f17194cb0d3d",
+      "purpose": "LDT measurement and strategy adapters"
+    },
+    {
+      "module": "MIPStarRE.LDT",
+      "path": "MIPStarRE/LDT.lean",
+      "sha256": "72de11657351398efb8e0e9ada004a0f8d57b7adb087953060bfd8a52cc42dfd",
+      "purpose": "classical and quantum low-degree-test root"
+    }
+  ]
+}

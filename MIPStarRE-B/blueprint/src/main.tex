@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{seqsplit}
+\input{src/macros.tex}
+
+\title{Lean Blueprint for the Quantum Pauli Basis Test}
+\author{MIPStarRE local formalization project}
+\date{Speculative Stage 3 snapshot}
+
+\begin{document}
+\maketitle
+\begin{quote}
+This blueprint is pinned to arXiv:2001.04383v3 and remains speculative until
+QPBT-002 and QPBT-009 are accepted. Planned Lean declaration names are not
+existence or proof claims.
+\end{quote}
+\tableofcontents
+\input{src/chapter/01-scope.tex}
+\input{src/chapter/02-foundations.tex}
+\input{src/chapter/03-game-completeness.tex}
+\input{src/chapter/04-naimark-preliminaries.tex}
+\input{src/chapter/05-strategy-consequences.tex}
+\input{src/chapter/06-expanded-observables.tex}
+\input{src/chapter/07-combination-linearity.tex}
+\input{src/chapter/08-classical-ldt.tex}
+\input{src/chapter/09-restricted-lines.tex}
+\input{src/chapter/10-global-exact-pauli.tex}
+\input{src/chapter/11-extraction-soundness.tex}
+\input{src/chapter/12-canonical-complexity.tex}
+\end{document}

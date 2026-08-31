@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source_id": "arxiv-2001.04383v3",
+  "url": "https://arxiv.org/src/2001.04383v3",
+  "allowed_hosts": ["arxiv.org", "export.arxiv.org"],
+  "archive": {
+    "bytes": 233859,
+    "sha256": "d645cd51dd26cae59195e61aeeb5c886a254ef4adf15da7e5657ad90c7ec2174"
+  },
+  "members": [
+    {
+      "name": "compression_arXiv_v3.tex",
+      "bytes": 896289,
+      "sha256": "38b3e662bb85bb902fcd056436fe9ecbe9e68d1990a074d0c0c12b39d5972ea9",
+      "crlf_lines": 14935
+    },
+    {
+      "name": "compression_arXiv_v3.bbl",
+      "bytes": 16898,
+      "sha256": "da0894e1c6f13e437e0d7f9d65ea3bf49615790c80d4e754696e6f1517ad71a0",
+      "crlf_lines": 418
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+.lake/
+.workflow-runtime/
+# Author-owned arXiv source is fetched and split locally. Commit manifests,
+# checksums, and project-authored source maps, not the paper text, unless a
+# compatible redistribution permission is recorded.
+references/2001.04383v3/source/
+references/2001.04383v3/sections/
+# The pinned MIPStarRE foundation is materialized locally because the upstream
+# snapshot contains no license file establishing redistribution permission.
+# Only future project-authored QPBT files are eligible to be tracked here.
+MIPStarRE/*
+!MIPStarRE/QPBT/
+!MIPStarRE/QPBT/**
+blueprint/.lake/
+blueprint/print/
+blueprint/web/
+__pycache__/
+*.olean
+*.ilean
+*.trace
+*.pyc
+*.log

@@ -1,0 +1,10 @@
+/build/
+/generated/graph.svg
+__pycache__/
+*.pyc
+*.fls
+*.fdb_latexmk
+*.aux
+*.log
+*.out
+*.toc

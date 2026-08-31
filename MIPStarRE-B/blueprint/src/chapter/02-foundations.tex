@@ -1,0 +1,16 @@
+\BlueprintChapter{Finite-Field and Quantum Foundations}{foundations}
+
+This chapter fixes finite carriers, polynomial encodings, measurement
+postprocessing, state-dependent distance, and generalized Pauli algebra. The
+correct trace phase replaces the false unrestricted cross-basis commutation
+claim.
+
+The Lean carrier contract is concrete.  An odd exponent $k$ selects
+\texttt{GaloisField 2 k}; its field, finite, characteristic, cardinality,
+finite-dimensional algebra, trace, and self-dual-basis data are derived once.
+Arbitrary POVMs use the qualified \texttt{MIPStarRE.Quantum.Measurement} API,
+without opening the unrelated LDT measurement hierarchy.  States live in
+finite Euclidean spaces, with explicit adapters for \texttt{WithLp}, matrices,
+and operator actions.  Normalization is bundled with each pure strategy.
+
+\input{src/generated/chapter-02-entries.tex}

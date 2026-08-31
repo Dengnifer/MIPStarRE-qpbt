@@ -1,0 +1,16 @@
+\definecolor{BlueprintExact}{HTML}{E2F0D9}
+\definecolor{BlueprintBorder}{HTML}{666666}
+\newenvironment{BlueprintNode}[2]{%
+  \par\medskip\noindent
+  \begin{minipage}{\linewidth}
+  \colorbox{BlueprintExact}{\parbox{0.97\linewidth}{\textbf{#1: #2}}}\par\smallskip
+  \begin{description}[style=nextline,leftmargin=31mm,labelwidth=29mm,itemsep=1pt,topsep=1pt]
+}{%
+  \end{description}
+  \end{minipage}\par\medskip
+}
+\newcommand{\BlueprintField}[2]{\item[\textbf{#1}] #2}
+\newcommand{\BlueprintIdentifier}[1]{\texttt{\seqsplit{#1}}}
+\newcommand{\BlueprintChapter}[2]{%
+  \section{#1}\label{chapter:#2}
+}

@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "gaps": [
+    {
+      "id": "G01",
+      "class": "false-statement",
+      "source": "appendix-preliminaries.tex:34 [13119]",
+      "affected_nodes": ["A01-INDICATOR"],
+      "paper_problem": "The indicator encoding is claimed to vanish exactly at the zero point, but it is never the zero vector.",
+      "disposition": "Prove that its coordinates sum to one, hence it is nonzero, and derive the probability estimate from this identity.",
+      "public_effect": "Proof repair only; no public QPBT hypothesis or conclusion changes.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G02",
+      "class": "index-omission",
+      "source": "appendix-strategies.tex:42-104,130 [13237-13300,13325]; appendix-combine-xz.tex:32 [13750]",
+      "affected_nodes": ["A03-WIN", "A07-JOINT"],
+      "paper_problem": "Magic-Square conditioning omits indicator embeddings and cases; one joint-measurement basis is mistyped.",
+      "disposition": "Restore indicator indices, quantify the point domain, use X/Z bases, and enumerate all seven decider edges and both orientations.",
+      "public_effect": "Restores the intended tests without strengthening soundness.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G03",
+      "class": "missing-case",
+      "source": "appendix-strategies.tex:92-97 [13287-13297]",
+      "affected_nodes": ["A03-WIN"],
+      "paper_problem": "The A.7 proof silently reduces to 6*m*d <= q.",
+      "disposition": "Use an internal small-degree helper and discharge the complementary public branch with a proved universal large-error bound.",
+      "public_effect": "The source-faithful A.7 and final soundness statements remain unconditional beyond admissibility.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G04",
+      "class": "typo-and-domain",
+      "source": "qpbt-game-and-soundness.tex:533-591 [5579-5635]",
+      "affected_nodes": ["S01-SOUNDNESS", "S02-APPENDIX-SOUNDNESS", "B01-BINARY"],
+      "paper_problem": "Isometry suffixes and robustness argument order drift, and epsilon's probability domain is omitted.",
+      "disposition": "Use Alice/Bob suffixes consistently, one argument order, and the faithful boundary 0 <= epsilon <= 1.",
+      "public_effect": "Typographical normalization plus an explicit probability-domain boundary.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G05",
+      "class": "norm-mismatch",
+      "source": "appendix-separate-xz-conclude.tex:256-369,450-462 [14709-14915]",
+      "affected_nodes": ["R05-ROBUSTNESS", "S01-SOUNDNESS", "S02-APPENDIX-SOUNDNESS"],
+      "paper_problem": "A.24 proves squared norm while the public theorem states norm, with an invalid delta-for-sqrt-delta substitution.",
+      "disposition": "Prove a named square-root robustness bridge, positivity/contraction bounds, and small/large error cases; rechoose universal constants.",
+      "public_effect": "Only universal polynomial constants and exponent are reparameterized.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G06",
+      "class": "label-typo",
+      "source": "appendix-strategies.tex:112 [13307]",
+      "affected_nodes": ["A04-WIN-OBS"],
+      "paper_problem": "The source uses prefix len: instead of lem:.",
+      "disposition": "Preserve the literal source label in metadata and use a normalized Lean name.",
+      "public_effect": "Metadata only.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G07",
+      "class": "missing-lemma",
+      "source": "appendix-strategies.tex:8-16 [13203-13211]",
+      "affected_nodes": ["N01-NAIMARK", "S01-SOUNDNESS"],
+      "paper_problem": "The public theorem accepts POVMs while Appendix A begins with projective measurements.",
+      "disposition": "Prove one simultaneous local Naimark dilation preserving every game correlation and compose it with extraction isometries.",
+      "public_effect": "Discharges an implicit proof boundary without adding an assumption.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G08",
+      "class": "missing-conditioning",
+      "source": "appendix-combine-xz.tex:117-153 [13835-13871]",
+      "affected_nodes": ["R01-FIBER", "A08-XZ-LINES"],
+      "paper_problem": "An average over fibers is used as a uniform fixed-fiber linearity premise.",
+      "disposition": "Prove a good/bad fiber lemma with threshold eta and average error O(delta/eta + eta).",
+      "public_effect": "Internal robustness exponent loss only.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G09",
+      "class": "false-statement",
+      "source": "appendix-separate-xz-conclude.tex:37-43 [14490-14496]",
+      "affected_nodes": ["F05-PAULI", "A13-EXACT-PAULI"],
+      "paper_problem": "Arbitrary cross-basis generalized Pauli observables are claimed to commute.",
+      "disposition": "State the exact trace phase and specialize only after proving that the phase vanishes.",
+      "public_effect": "A false intermediate is weakened; every downstream same-basis use is retained.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G10",
+      "class": "missing-hypotheses",
+      "source": "classical-ldt.tex:399-443 [4561-4605]",
+      "affected_nodes": ["L01-LDT-SOUNDNESS"],
+      "paper_problem": "Theorem 7.8 omits field/divisibility hypotheses and has a malformed Reed-Solomon tuple.",
+      "disposition": "Expose admissibility and sampler dimension assumptions, correct the code tuple, and prove tensor-code/simultaneous-test adapters.",
+      "public_effect": "Narrows the literal internal theorem to the game actually defined.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G11",
+      "class": "dimension-mismatch",
+      "source": "appendix-apply-classical-ldt.tex:300-321 [14306-14327]",
+      "affected_nodes": ["R02-AXIS-LDT", "A12-GLOBAL"],
+      "paper_problem": "The proof invokes LDT in dimension 2*m+2 although admissibility gives only m divides q.",
+      "disposition": "Prove a direct Fin n axis LDT and equivalence to the CL-indexed version when divisibility holds.",
+      "public_effect": "Preserves the QPBT admissibility assumptions.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G12",
+      "class": "malformed-references",
+      "source": "appendix-apply-classical-ldt.tex:71-275 [14077-14281]",
+      "affected_nodes": ["R03-RESTRICTED", "A11-SUBLINES", "R04-RESTRICTED-CLAIMS"],
+      "paper_problem": "Restricted-line definitions and claims contain punctuation, basis, point-index, missing-property, and complement errors.",
+      "disposition": "Formalize all marginals and mixture weights, add Property 3, repair indices and expectations, and state the complement estimate.",
+      "public_effect": "Proof repair only.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G13",
+      "class": "missing-proof",
+      "source": "appendix-apply-classical-ldt.tex:432 [14438]",
+      "affected_nodes": ["A12-GLOBAL"],
+      "paper_problem": "A similar-calculation sentence hides the triple-product consistency estimate and the zero-scalar mass.",
+      "disposition": "Prove a named Cauchy-Schwarz/projectivity bound and handle alpha = 0 separately.",
+      "public_effect": "Fills proof debt without changing A.21.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G14",
+      "class": "index-typos",
+      "source": "pauli.tex:123-148,191-196 [2071-2096,2139-2144]",
+      "affected_nodes": ["F10-PAULI-BINARY", "B01-BINARY"],
+      "paper_problem": "Lemma 5.5 quantifies arbitrary tensor length L, but one factor index is ranged through q instead of k, and its final Fourier projector is written with the summed b_j instead of the fixed outcome a_j.",
+      "disposition": "Retain arbitrary natural L, range j through the k basis coordinates, and index the resulting single-qubit projector by a_j.",
+      "public_effect": "Repairs two indices in the qudit-to-qubit conversion without changing its hypotheses or conclusion.",
+      "issue": "QPBT-009"
+    },
+    {
+      "id": "G15",
+      "class": "index-typo",
+      "source": "appendix-strategies.tex:198-203 [13393-13398]",
+      "affected_nodes": ["A04-WIN-OBS"],
+      "paper_problem": "The intermediate reversed observable product swaps the r_X/r_Z superscripts and u_X/u_Z arguments, contradicting the lemma statement and the immediately following conclusion.",
+      "disposition": "Use Z^(r_Z)(u_Z) X^(r_X)(u_X) in the reversed product throughout the anticommutation argument.",
+      "public_effect": "Repairs an internal index typo; the stated observable consequence is unchanged.",
+      "issue": "QPBT-009"
+    }
+  ]
+}

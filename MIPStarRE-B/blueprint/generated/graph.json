@@ -1,0 +1,2642 @@
+{
+  "nodes": [
+    {
+      "boundary_hypotheses": "Positive finite field cardinality and the indicator definition only.",
+      "chapter": "04",
+      "consumers": [
+        "A03-WIN"
+      ],
+      "encoding": "Finite sums over the one-hot vector; probability is a finite uniform expectation.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G01"
+      ],
+      "id": "A01-INDICATOR",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Preliminaries",
+        "names": [
+          "MIPStarRE.QPBT.indicator_sum_eq_one",
+          "MIPStarRE.QPBT.indicator_ne_zero",
+          "MIPStarRE.QPBT.anticommutingSampleProbability"
+        ]
+      },
+      "prerequisites": [
+        "F02-CODE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          24,
+          53
+        ],
+        "label": "fact:omega-anticomm-prob",
+        "original_lines": [
+          13109,
+          13138
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-preliminaries.tex"
+      },
+      "statement": "The indicator coordinates sum to one and hence the indicator is nonzero; use this to bound the probability of an anticommuting sampled tuple.",
+      "status": "paper-gap",
+      "title": "Indicator probability repair",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Finite index type, normalized state, and the exact average distance premise.",
+      "chapter": "04",
+      "consumers": [
+        "A03-WIN"
+      ],
+      "encoding": "Finite probability distributions and complex coefficients of norm at most one.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A02-PRELIMINARIES",
+      "integrity": {
+        "lean_assumptions": "Finite PMF, normalized state, norm-bounded coefficients, and Measurement structures.",
+        "lean_conclusion": "The corresponding state-dependent distance inequalities with identical dependence.",
+        "paper_assumptions": "Average delta-closeness and bounded scalar weights; for the second lemma, two POVMs and unit-circle phases.",
+        "paper_conclusion": "Weighted averages, respectively phase observables, remain close with the displayed error.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Preliminaries",
+        "names": [
+          "MIPStarRE.QPBT.average_closeness",
+          "MIPStarRE.QPBT.povmToObservable_closeness"
+        ]
+      },
+      "prerequisites": [
+        "F04-DISTANCE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          54,
+          89
+        ],
+        "label": "lem:avg-closeness",
+        "original_lines": [
+          13139,
+          13174
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-preliminaries.tex"
+      },
+      "statement": "Bounded scalar-weighted averages preserve state-dependent closeness, and close finite POVMs induce close phase observables.",
+      "status": "not-started",
+      "title": "Averaged closeness and measurement observables",
+      "transitive_definitions": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Public theorem: admissibility, normalized projective reduction, success >= 1-epsilon, 0<=epsilon<=1. Internal helper additionally assumes 6*m*d<=q.",
+      "chapter": "05",
+      "consumers": [
+        "A04-WIN-OBS",
+        "A15-UNITARY"
+      ],
+      "encoding": "One typed theorem field per verifier edge and orientation; the internal small-degree helper is not the paper theorem.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G02",
+        "G03"
+      ],
+      "id": "A03-WIN",
+      "integrity": {
+        "lean_assumptions": "Admissible parameters, normalized finite strategy, 0<=epsilon<=1, and the same success inequality; projectivity is obtained from Naimark.",
+        "lean_conclusion": "A record containing every displayed estimate with corrected indicator indices and all edge orientations.",
+        "paper_assumptions": "A strategy succeeds with probability at least 1-epsilon.",
+        "paper_conclusion": "The seven displayed families of consistency/commutation estimates.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.StrategyConsequences",
+        "names": [
+          "MIPStarRE.QPBT.winImplications_ofSixMulDegreeLE",
+          "MIPStarRE.QPBT.winImplications"
+        ]
+      },
+      "prerequisites": [
+        "A01-INDICATOR",
+        "A02-PRELIMINARIES",
+        "E02-MAGIC-SQUARE",
+        "N01-NAIMARK"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          41,
+          110
+        ],
+        "label": "lem:qld-win-implications",
+        "original_lines": [
+          13236,
+          13305
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-strategies.tex"
+      },
+      "statement": "High QPBT success yields all point/line/Pauli consistency, commutation, Magic-Square, and anticommutation estimates listed in A.7.",
+      "status": "paper-gap",
+      "title": "Consequences of passing the seven QPBT checks",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Exactly the conclusions of A03 and bounded Fourier phases.",
+      "chapter": "05",
+      "consumers": [
+        "A05-EXPANDED"
+      ],
+      "encoding": "Use normalized Lean naming while retaining the literal malformed label in the source field; repair the swapped r_X/r_Z indices in the intermediate reversed product to match the lemma statement and conclusion.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G06",
+        "G15"
+      ],
+      "id": "A04-WIN-OBS",
+      "integrity": {
+        "lean_assumptions": "The A03 result and the observable definitions.",
+        "lean_conclusion": "The same inequalities under normalized declaration naming and corrected r_X/r_Z indexing.",
+        "paper_assumptions": "The observables derived from a high-success projective strategy.",
+        "paper_conclusion": "The listed consistency, commutation, and anticommutation estimates.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.StrategyConsequences",
+        "names": [
+          "MIPStarRE.QPBT.winImplicationsObservables"
+        ]
+      },
+      "prerequisites": [
+        "A03-WIN"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          111,
+          207
+        ],
+        "label": "len:qld-win-implications-obs",
+        "original_lines": [
+          13306,
+          13402
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-strategies.tex"
+      },
+      "statement": "Translate the A.7 measurement estimates into the point observable consistency, commutation, and anticommutation estimates used by expansion.",
+      "status": "paper-gap",
+      "title": "Observable consequences",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A04 estimates and normalized EPR auxiliaries; no fresh approximation premise.",
+      "chapter": "06",
+      "consumers": [
+        "A06-EXPANDED-LINES",
+        "A07-JOINT"
+      ],
+      "encoding": "Expanded carrier is an explicit finite product; every tensor placement is typed.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A05-EXPANDED",
+      "integrity": {
+        "lean_assumptions": "The same constructions and A04 estimates.",
+        "lean_conclusion": "The same averaged state-dependent inequalities.",
+        "paper_assumptions": "The expanded state and observables constructed from A.8.",
+        "paper_conclusion": "Polynomial-error commutation and consistency properties.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ExpandedObservables",
+        "names": [
+          "MIPStarRE.QPBT.expandedPointCommutationConsistency"
+        ]
+      },
+      "prerequisites": [
+        "A04-WIN-OBS",
+        "F05-PAULI"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          99,
+          159
+        ],
+        "label": "lem:qld-comm-cons",
+        "original_lines": [
+          13501,
+          13561
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-expanded-observables.tex"
+      },
+      "statement": "After adjoining EPR auxiliaries, the expanded point measurements are self-consistent and approximately commute across X/Z data.",
+      "status": "not-started",
+      "title": "Expanded-state commutation and consistency",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The A05 average estimates and orthonormalization domain 0<=delta<=1.",
+      "chapter": "06",
+      "consumers": [
+        "A08-XZ-LINES"
+      ],
+      "encoding": "Line answers are bounded-degree univariate polynomial data with evaluation postprocessing.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A06-EXPANDED-LINES",
+      "integrity": {
+        "lean_assumptions": "A05 plus the exact finite line/evaluation definitions.",
+        "lean_conclusion": "A structure containing the same projective measurements and estimates.",
+        "paper_assumptions": "The expanded point measurements and line strategy data.",
+        "paper_conclusion": "Existence of projective line measurements satisfying three displayed estimates.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ExpandedObservables",
+        "names": [
+          "MIPStarRE.QPBT.expandedLineMeasurements"
+        ]
+      },
+      "prerequisites": [
+        "A05-EXPANDED",
+        "E01-ORTHO"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          160,
+          316
+        ],
+        "label": "lem:qld-comm-line-cons",
+        "original_lines": [
+          13562,
+          13718
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-expanded-observables.tex"
+      },
+      "statement": "Construct expanded projective line measurements with self-consistency and both point-consistency properties.",
+      "status": "not-started",
+      "title": "Expanded projective line measurements",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A05 approximate commutation and consistency; the corrected second marginal uses basis Z.",
+      "chapter": "07",
+      "consumers": [
+        "A09-COMBINED-POINT",
+        "R01-FIBER"
+      ],
+      "encoding": "Joint outcomes are field pairs; both marginal postprocessings are explicit.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G02"
+      ],
+      "id": "A07-JOINT",
+      "integrity": {
+        "lean_assumptions": "A05 with the corrected X/Z indexing.",
+        "lean_conclusion": "The same existence and estimates with typed X and Z marginals.",
+        "paper_assumptions": "Expanded approximately commuting point measurements.",
+        "paper_conclusion": "Existence of projective joint measurements with three estimates.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.JointMeasurements",
+        "names": [
+          "MIPStarRE.QPBT.jointPointMeasurements"
+        ]
+      },
+      "prerequisites": [
+        "A05-EXPANDED"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          10,
+          33
+        ],
+        "label": "lem:qld-4-10",
+        "original_lines": [
+          13728,
+          13751
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-combine-xz.tex"
+      },
+      "statement": "For each pair of X/Z points, construct a projective joint measurement consistent with the two expanded point marginals.",
+      "status": "paper-gap",
+      "title": "Joint X/Z point measurements",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A06, A07, and the proved average-to-fiber bound; no uniform fiber hypothesis.",
+      "chapter": "07",
+      "consumers": [
+        "A10-COMBINED-LINE"
+      ],
+      "encoding": "Outcomes are pairs of bounded-degree line polynomials; bad-fiber choices remain internal and are averaged out.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G08"
+      ],
+      "id": "A08-XZ-LINES",
+      "integrity": {
+        "lean_assumptions": "Those data plus the proved R01 conditioning lemma.",
+        "lean_conclusion": "The same averaged existence statement, with the internal robustness exponent reparameterized.",
+        "paper_assumptions": "Expanded line and joint point measurements with polynomial error.",
+        "paper_conclusion": "A polynomial-pair POVM with the displayed averaged consistency.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.JointMeasurements",
+        "names": [
+          "MIPStarRE.QPBT.jointXZLineMeasurements"
+        ]
+      },
+      "prerequisites": [
+        "A06-EXPANDED-LINES",
+        "R01-FIBER",
+        "E01-ORTHO"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          203,
+          288
+        ],
+        "label": "lem:qld-xz-lines",
+        "original_lines": [
+          13921,
+          14006
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-combine-xz.tex"
+      },
+      "statement": "For every pair of X/Z lines, construct a POVM over polynomial pairs consistent with joint point measurements under the averaged robustness delivered by the fiber repair.",
+      "status": "paper-gap",
+      "title": "Joint X/Z line measurements",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Exactly A07; no additional commutation premise.",
+      "chapter": "09",
+      "consumers": [
+        "A10-COMBINED-LINE",
+        "R04-RESTRICTED-CLAIMS"
+      ],
+      "encoding": "Measurement postprocessing along a finite field-linear map.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A09-COMBINED-POINT",
+      "integrity": {
+        "lean_assumptions": "A07.",
+        "lean_conclusion": "The identical postprocessed projective family and estimates.",
+        "paper_assumptions": "Joint point measurements from A.11.",
+        "paper_conclusion": "Projective scalar-combined measurements with two estimates.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.RestrictedLines",
+        "names": [
+          "MIPStarRE.QPBT.combinedPointMeasurements"
+        ]
+      },
+      "prerequisites": [
+        "A07-JOINT"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          26,
+          52
+        ],
+        "label": "lem:qld-4-12",
+        "original_lines": [
+          14032,
+          14058
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "Postprocess each joint point measurement along alpha*a+beta*b to obtain projective scalar measurements with self-consistency and point consistency.",
+      "status": "not-started",
+      "title": "Scalar-combined point measurements",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A08 and A09 with their averaged robustness functions.",
+      "chapter": "09",
+      "consumers": [
+        "R03-RESTRICTED"
+      ],
+      "encoding": "Combined points have dimension 2*m+2; line polynomials carry the paper's degree bound.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A10-COMBINED-LINE",
+      "integrity": {
+        "lean_assumptions": "A08 and A09.",
+        "lean_conclusion": "The same existence and consistency inequality.",
+        "paper_assumptions": "Joint X/Z line and scalar point measurements.",
+        "paper_conclusion": "A line polynomial POVM with the displayed consistency.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.RestrictedLines",
+        "names": [
+          "MIPStarRE.QPBT.combinedLineMeasurements"
+        ]
+      },
+      "prerequisites": [
+        "A08-XZ-LINES",
+        "A09-COMBINED-POINT"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          53,
+          70
+        ],
+        "label": "lem:qld-4-13",
+        "original_lines": [
+          14059,
+          14076
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "For each line in the combined point space, construct a bounded-degree polynomial POVM consistent with scalar-combined point measurements.",
+      "status": "not-started",
+      "title": "Combined polynomial line measurements",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The corrected restricted distribution definition and finite field data.",
+      "chapter": "09",
+      "consumers": [
+        "R04-RESTRICTED-CLAIMS"
+      ],
+      "encoding": "A finite joint PMF with separately proved pushforward equalities for every marginal.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G12"
+      ],
+      "id": "A11-SUBLINES",
+      "integrity": {
+        "lean_assumptions": "R03 and finite-field nonemptiness.",
+        "lean_conclusion": "The same coupling plus the context-required third marginal property omitted in prose.",
+        "paper_assumptions": "A combined line-point distribution and its restricted cases.",
+        "paper_conclusion": "A coupling with the listed line and projected-line marginals.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.RestrictedLines",
+        "names": [
+          "MIPStarRE.QPBT.restrictedSublineCoupling"
+        ]
+      },
+      "prerequisites": [
+        "R03-RESTRICTED"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          96,
+          172
+        ],
+        "label": "lem:qld-sublines",
+        "original_lines": [
+          14102,
+          14178
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "Construct a coupling of a combined line and its X/Z projected lines with all three stated marginals, including the omitted axis-projection property.",
+      "status": "paper-gap",
+      "title": "Restricted subline coupling",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "QPBT admissibility only; triple-product consistency and alpha=0 mass are proved internally.",
+      "chapter": "10",
+      "consumers": [
+        "A13-EXACT-PAULI"
+      ],
+      "encoding": "Use dimension n=2*m+2 in the direct-axis theorem; outcomes split into the two m-variable polynomial coordinates.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G11",
+        "G13"
+      ],
+      "id": "A12-GLOBAL",
+      "integrity": {
+        "lean_assumptions": "A09-A11, R04, and the direct-axis theorem R02 under QPBT admissibility.",
+        "lean_conclusion": "The same measurement and consistency bound, including a proved triple-product step.",
+        "paper_assumptions": "The combined point/line strategy passes the simultaneous LDT estimates.",
+        "paper_conclusion": "A projective global polynomial-pair measurement with point consistency.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.GlobalMeasurement",
+        "names": [
+          "MIPStarRE.QPBT.globalPolynomialPairMeasurement",
+          "MIPStarRE.QPBT.tripleProductConsistency"
+        ]
+      },
+      "prerequisites": [
+        "R02-AXIS-LDT",
+        "R04-RESTRICTED-CLAIMS"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          300,
+          447
+        ],
+        "label": "lem:qld-4-7",
+        "original_lines": [
+          14306,
+          14453
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "Apply the direct-axis LDT to obtain a projective measurement over pairs of individual-degree polynomials consistent with X and Z point measurements.",
+      "status": "paper-gap",
+      "title": "Global polynomial-pair measurement",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A12 and finite-field Fourier identities. No false arbitrary cross-basis commutation premise.",
+      "chapter": "10",
+      "consumers": [
+        "A14-PAULI-HELPER"
+      ],
+      "encoding": "Use the exact twisted phase theorem; only specialize to commuting observables after proving trace-phase cancellation.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G09"
+      ],
+      "id": "A13-EXACT-PAULI",
+      "integrity": {
+        "lean_assumptions": "A12 plus the corrected generalized Pauli phase algebra.",
+        "lean_conclusion": "The same properties, using phase cancellation exactly where needed.",
+        "paper_assumptions": "The global polynomial-pair measurement and expanded point data.",
+        "paper_conclusion": "Exact observables satisfying the listed representation and consistency properties.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ExactPauli",
+        "names": [
+          "MIPStarRE.QPBT.constructExactPaulis"
+        ]
+      },
+      "prerequisites": [
+        "A12-GLOBAL",
+        "F05-PAULI"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          49,
+          195
+        ],
+        "label": "lem:qld-construct-the-paulis",
+        "original_lines": [
+          14502,
+          14648
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-separate-xz-conclude.tex"
+      },
+      "statement": "From the global polynomial measurement, construct exact linear generalized Pauli representations and prove their self-consistency and proximity to point measurements.",
+      "status": "paper-gap",
+      "title": "Exact generalized Pauli observables",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "A12 and A13 only.",
+      "chapter": "10",
+      "consumers": [
+        "A15-UNITARY"
+      ],
+      "encoding": "Move this helper before its consumer in Lean despite its later narrative placement in the paper.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A14-PAULI-HELPER",
+      "integrity": {
+        "lean_assumptions": "A12 and A13.",
+        "lean_conclusion": "The same estimates.",
+        "paper_assumptions": "The exact Pauli construction and global consistency.",
+        "paper_conclusion": "The two displayed averaged consistency estimates.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ExactPauli",
+        "names": [
+          "MIPStarRE.QPBT.exactPauliConsistency"
+        ]
+      },
+      "prerequisites": [
+        "A13-EXACT-PAULI"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          196,
+          254
+        ],
+        "label": "lem:qld-constructing-the-paulis-helper",
+        "original_lines": [
+          14649,
+          14707
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-separate-xz-conclude.tex"
+      },
+      "statement": "Transfer the global polynomial measurement's point consistency to the exact Pauli measurement family used by extraction.",
+      "status": "not-started",
+      "title": "Pauli consistency helper",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The A03 strategy consequences and exact Pauli construction; explicit carrier universes and finite instances; 0<=delta. No aggregate max or unsquared family predicate replaces the five stated bounds.",
+      "chapter": "11",
+      "consumers": [
+        "R05-ROBUSTNESS"
+      ],
+      "encoding": "SquaredRealizes strategy ideal isometry delta is a transparent conjunction: one squared mapped-state norm bound <= delta, then separate Alice-X, Alice-Z, Bob-X, and Bob-Z finite averages of squared Euclidean norms, each <= delta. Realizes has the same four squared-family fields but an unsquared mapped-state norm bound for the public theorem. Conjugation uses BipartiteIsometry.conjugate and explicit WithLp/operator adapters.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "A15-UNITARY",
+      "integrity": {
+        "lean_assumptions": "A03 and A14.",
+        "lean_conclusion": "Exactly the squared-norm and family-distance conclusions.",
+        "paper_assumptions": "The global and exact Pauli measurements obtained above.",
+        "paper_conclusion": "Local unitaries, squared extraction error, and ideal-Pauli measurement closeness.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Extraction",
+        "names": [
+          "MIPStarRE.QPBT.Realizes",
+          "MIPStarRE.QPBT.SquaredRealizes",
+          "MIPStarRE.QPBT.qldUnitarySquared"
+        ]
+      },
+      "prerequisites": [
+        "A03-WIN",
+        "A14-PAULI-HELPER"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          255,
+          446
+        ],
+        "label": "lem:qld-unitary",
+        "original_lines": [
+          14708,
+          14899
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-separate-xz-conclude.tex"
+      },
+      "statement": "Construct local unitaries extracting the ideal EPR tensor state and prove a SquaredRealizes certificate with one squared-state-norm bound and four squared-family Pauli bounds, each at most delta.",
+      "status": "not-started",
+      "title": "Squared-norm unitary extraction",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "S01 plus the characteristic-two/self-dual basis already supplied by admissibility.",
+      "chapter": "11",
+      "consumers": [],
+      "encoding": "Use the self-dual F2 basis equivalence and explicit tensor reindexing; canonical robustness order is epsilon,m,d,q.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G04",
+        "G14"
+      ],
+      "id": "B01-BINARY",
+      "integrity": {
+        "lean_assumptions": "S01 and the explicit characteristic-two basis equivalence.",
+        "lean_conclusion": "The same qubit state and tensor-Pauli conclusions with normalized robustness arguments and the repaired F10 tensor indices.",
+        "paper_assumptions": "The assumptions of Theorem 7.14 for a power-of-two field.",
+        "paper_conclusion": "Extraction and Pauli closeness expressed on M*log q qubits.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "corollary",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Binary",
+        "names": [
+          "MIPStarRE.QPBT.pauliBinary"
+        ]
+      },
+      "prerequisites": [
+        "S01-SOUNDNESS",
+        "F10-PAULI-BINARY"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          571,
+          589
+        ],
+        "label": "cor:pauli-binary",
+        "original_lines": [
+          5617,
+          5635
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-game-and-soundness.tex"
+      },
+      "statement": "For characteristic-two q, convert the q-dimensional extracted EPR and generalized Pauli data into M*log q qubits and tensor products of single-qubit X/Z measurements.",
+      "status": "paper-gap",
+      "title": "Qubit Pauli corollary",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "0 <= delta <= 1, finite carriers, normalized bipartite state, and the exact consistency premise.",
+      "chapter": "02",
+      "consumers": [
+        "A06-EXPANDED-LINES",
+        "A08-XZ-LINES"
+      ],
+      "encoding": "Specialize the pinned result to finite matrix measurements and the project's state-dependent distance.",
+      "external_id": "EXT-ML20",
+      "fidelity": "external-boundary",
+      "gap_ids": [],
+      "id": "E01-ORTHO",
+      "integrity": null,
+      "kind": "external-theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Preliminaries",
+        "names": [
+          "MIPStarRE.QPBT.orthonormalization"
+        ]
+      },
+      "prerequisites": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          90,
+          100
+        ],
+        "label": "lem:ortho",
+        "original_lines": [
+          13175,
+          13185
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-preliminaries.tex"
+      },
+      "statement": "Consistent finite POVMs admit nearby projective measurements with fourth-root robustness.",
+      "status": "not-started",
+      "title": "External orthonormalization boundary",
+      "transitive_definitions": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Explicit success deficit in [0,1] and normalized finite-dimensional strategy.",
+      "chapter": "03",
+      "consumers": [
+        "A03-WIN"
+      ],
+      "encoding": "Finite question/answer types and binary observables, specialized from arXiv:1709.09267v2.",
+      "external_id": "EXT-MS",
+      "fidelity": "external-boundary",
+      "gap_ids": [],
+      "id": "E02-MAGIC-SQUARE",
+      "integrity": null,
+      "kind": "external-theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.MagicSquare",
+        "names": [
+          "MIPStarRE.QPBT.magicSquareRigidity"
+        ]
+      },
+      "prerequisites": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          110,
+          147
+        ],
+        "label": "thm:ms-rigidity",
+        "original_lines": [
+          4769,
+          4806
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/magic-square.tex"
+      },
+      "statement": "Near-perfect Magic Square play yields approximately anticommuting observables on the shared state with polynomial robustness.",
+      "status": "not-started",
+      "title": "External Magic Square rigidity boundary",
+      "transitive_definitions": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Positive dimension, 0<=delta<=1, normalized state, and the theorem's averaged approximate-linearity premise.",
+      "chapter": "07",
+      "consumers": [
+        "R01-FIBER"
+      ],
+      "encoding": "Specialize arXiv:1610.03574v1 to Fin t -> ZMod 2 and finite coordinate Hilbert spaces.",
+      "external_id": "EXT-NV17",
+      "fidelity": "external-boundary",
+      "gap_ids": [],
+      "id": "E03-LINEARITY",
+      "integrity": null,
+      "kind": "external-theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.FiberLinearity",
+        "names": [
+          "MIPStarRE.QPBT.quantumLinearity"
+        ]
+      },
+      "prerequisites": [
+        "F04-DISTANCE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          34,
+          49
+        ],
+        "label": "thm:linearity",
+        "original_lines": [
+          13752,
+          13767
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-combine-xz.tex"
+      },
+      "statement": "Approximately linear binary observables indexed by a finite F2-vector space admit nearby exactly linear observables after finite ancillary extension.",
+      "status": "not-started",
+      "title": "External quantum linearity theorem",
+      "transitive_definitions": [
+        "F03-MEASUREMENT",
+        "F04-DISTANCE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "All hypotheses of the pinned theorem, including code distance and finite-dimensional strategy data, are explicit.",
+      "chapter": "08",
+      "consumers": [
+        "L01-LDT-SOUNDNESS"
+      ],
+      "encoding": "Pin arXiv:2111.08131v3 and explicitly translate its tensor-code test into the paper's simultaneous individual-degree test.",
+      "external_id": "EXT-TENSOR",
+      "fidelity": "external-boundary",
+      "gap_ids": [],
+      "id": "E04-TENSOR-CODE",
+      "integrity": null,
+      "kind": "external-theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ClassicalLDTAdapter",
+        "names": [
+          "MIPStarRE.QPBT.tensorCodeSoundness"
+        ]
+      },
+      "prerequisites": [
+        "F02-CODE",
+        "F04-DISTANCE",
+        "F09-LDT-GAME"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          399,
+          443
+        ],
+        "label": "lem:ld-soundness",
+        "original_lines": [
+          4561,
+          4605
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/classical-ldt.tex"
+      },
+      "statement": "The pinned tensor-code test soundness theorem yields a global codeword measurement from a high-success two-prover test strategy.",
+      "status": "not-started",
+      "title": "External tensor-code soundness boundary",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F06-CL",
+        "F07-TYPED",
+        "F09-LDT-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Universe levels are explicit for reusable carrier APIs. The field instances are derived from k and q=2^k with Odd k; no caller supplies duplicate field, cardinality, characteristic, or algebra instances.",
+      "chapter": "02",
+      "consumers": [
+        "F02-CODE",
+        "F05-PAULI",
+        "F06-CL",
+        "G01-PARAMETERS",
+        "K03A-FIELD-ARITHMETIC"
+      ],
+      "encoding": "Instantiate Mathlib's GaloisField 2 k directly and derive its Field, Fintype, DecidableEq, CharP, cardinality, finite-dimensional algebra, trace, and self-dual-basis data; vectors are Fin n -> GaloisField 2 k. Do not route this boundary through an abstract carrier wrapper.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "F01-FIELD",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Field",
+        "names": [
+          "MIPStarRE.QPBT.FieldData",
+          "MIPStarRE.QPBT.fieldDataOfOddExponent",
+          "MIPStarRE.QPBT.fieldTrace"
+        ]
+      },
+      "prerequisites": [],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          412
+        ],
+        "label": "sec:finite-fields",
+        "original_lines": [
+          1317,
+          1728
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/finite-fields.tex"
+      },
+      "statement": "For an odd natural k, construct the characteristic-two field GaloisField 2 k of cardinality q=2^k, its prime-field trace, and the self-dual basis and algebra used by QPBT.",
+      "status": "not-started",
+      "title": "Finite fields, trace, and admissible sizes",
+      "transitive_definitions": []
+    },
+    {
+      "boundary_hypotheses": "Natural m,d and the field data of F01; injectivity and linearity are proof obligations, not structure fields.",
+      "chapter": "02",
+      "consumers": [
+        "A01-INDICATOR",
+        "E04-TENSOR-CODE",
+        "F09-LDT-GAME",
+        "G02-GAME",
+        "K03B-LOW-DEGREE-COMPLEXITY"
+      ],
+      "encoding": "Polynomials use Fin m variables and a per-variable degree bound; codewords and indicators use finite function types.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "F02-CODE",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Polynomial",
+        "names": [
+          "MIPStarRE.QPBT.IndividualDegreePolynomial",
+          "MIPStarRE.QPBT.lowDegreeEncode",
+          "MIPStarRE.QPBT.indicatorVector"
+        ]
+      },
+      "prerequisites": [
+        "F01-FIELD"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          94
+        ],
+        "label": "sec:ld-encoding",
+        "original_lines": [
+          1729,
+          1822
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/low-degree-code.tex"
+      },
+      "statement": "Define individual-degree polynomials, evaluation, the linear low-degree encoding, and the one-hot indicator vector indexed by field points.",
+      "status": "not-started",
+      "title": "Individual-degree polynomials and indicator encoding",
+      "transitive_definitions": [
+        "F01-FIELD"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Declare universe uOutcome uCoord and require [Fintype Outcome] [DecidableEq Outcome] [Fintype Coord] [DecidableEq Coord]; the Hilbert scalar is Complex and no infinite-dimensional completion is hidden.",
+      "chapter": "02",
+      "consumers": [
+        "E01-ORTHO",
+        "E02-MAGIC-SQUARE",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME"
+      ],
+      "encoding": "Use MIPStarRE.Quantum.Measurement for arbitrary POVMs and define projectivity as a separate predicate. Keep this namespace qualified and do not open or inherit the incompatible LDT measurement hierarchy.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "F03-MEASUREMENT",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Approximation",
+        "names": [
+          "MIPStarRE.QPBT.MeasurementFamily",
+          "MIPStarRE.QPBT.ProjectiveMeasurementFamily",
+          "MIPStarRE.QPBT.observableOfMeasurement"
+        ]
+      },
+      "prerequisites": [],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          35,
+          50
+        ],
+        "label": "def:bracket",
+        "original_lines": [
+          1888,
+          1903
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/measurements.tex"
+      },
+      "statement": "Represent arbitrary finite POVMs, projective measurements, observables, brackets, and outcome postprocessing on finite coordinate Hilbert spaces.",
+      "status": "not-started",
+      "title": "Finite measurements and postprocessing",
+      "transitive_definitions": []
+    },
+    {
+      "boundary_hypotheses": "Declare universe uAlice uBob uAuxAlice uAuxBob and require the corresponding [Fintype] and [DecidableEq] instances; the state is bundled with norm one, and every Real.rpow use receives proved nonnegativity. No coercion between WithLp, matrices, and operators is left implicit.",
+      "chapter": "02",
+      "consumers": [
+        "A02-PRELIMINARIES",
+        "E01-ORTHO",
+        "E02-MAGIC-SQUARE",
+        "E03-LINEARITY",
+        "E04-TENSOR-CODE",
+        "N01-NAIMARK"
+      ],
+      "encoding": "Use EuclideanSpace Complex carriers and a PureStrategy field whose norm-one proof bundles probability normalization. Supply explicit adapters between EuclideanSpace/WithLp 2 coordinates, matrices, Module.End, and operator actions. BipartiteIsometry is a transparent pair of local linear isometries; conjugate is explicitly V * A * V.adjoint on each side.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "F04-DISTANCE",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Approximation",
+        "names": [
+          "MIPStarRE.QPBT.PureStrategy",
+          "MIPStarRE.QPBT.BipartiteIsometry",
+          "MIPStarRE.QPBT.BipartiteIsometry.conjugate",
+          "MIPStarRE.QPBT.stateDependentDistance",
+          "MIPStarRE.QPBT.familyApprox"
+        ]
+      },
+      "prerequisites": [
+        "F03-MEASUREMENT"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          214,
+          405
+        ],
+        "label": "def:state-distance",
+        "original_lines": [
+          3097,
+          3288
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/strategies-distance.tex"
+      },
+      "statement": "Define normalized finite bipartite pure strategies, transparent local isometries and conjugation, consistency, state-dependent operator/family distance, and its triangle/data-processing laws.",
+      "status": "not-started",
+      "title": "Strategies and state-dependent distance",
+      "transitive_definitions": [
+        "F03-MEASUREMENT"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Characteristic two and a self-dual basis where invoked. Cross-basis commutation is available only when the proved phase is one.",
+      "chapter": "02",
+      "consumers": [
+        "A05-EXPANDED",
+        "A13-EXACT-PAULI",
+        "F10-PAULI-BINARY",
+        "G02-GAME"
+      ],
+      "encoding": "Qudit registers are finite functions; phases are additive characters induced by field trace; tensor powers use finite product carriers.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G09"
+      ],
+      "id": "F05-PAULI",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Pauli",
+        "names": [
+          "MIPStarRE.QPBT.pauliX",
+          "MIPStarRE.QPBT.pauliZ",
+          "MIPStarRE.QPBT.pauliProjector",
+          "MIPStarRE.QPBT.pauli_twistedCommutation"
+        ]
+      },
+      "prerequisites": [
+        "F01-FIELD",
+        "F03-MEASUREMENT"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          214
+        ],
+        "label": "sec:generalized-pauli",
+        "original_lines": [
+          1949,
+          2162
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/pauli.tex"
+      },
+      "statement": "Define generalized Pauli X/Z operators and projectors, Fourier inversion, EPR identities, and the exact trace-valued twisted commutation phase.",
+      "status": "paper-gap",
+      "title": "Generalized Pauli and Fourier algebra",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F03-MEASUREMENT"
+      ]
+    },
+    {
+      "boundary_hypotheses": "All spaces and randomness are finite; efficiency claims are deferred to K03-K04.",
+      "chapter": "02",
+      "consumers": [
+        "F07-TYPED"
+      ],
+      "encoding": "Finite vector spaces use coordinate functions and samplers return explicit finite PMFs.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "F06-CL",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.Types",
+        "names": [
+          "MIPStarRE.QPBT.ConditionallyLinearMap",
+          "MIPStarRE.QPBT.CLSampler",
+          "MIPStarRE.QPBT.CLSampler.sample"
+        ]
+      },
+      "prerequisites": [
+        "F01-FIELD"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          715
+        ],
+        "label": "sec:linear",
+        "original_lines": [
+          2163,
+          2877
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/conditionally-linear.tex"
+      },
+      "statement": "Define conditionally-linear maps, their finite distributions, direct sums, downsizing, and executable conditionally-linear samplers.",
+      "status": "not-started",
+      "title": "Conditionally-linear maps and samplers",
+      "transitive_definitions": [
+        "F01-FIELD"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Finite type graph and finite fibers; detyping equivalences are proved, not coerced definitionally.",
+      "chapter": "02",
+      "consumers": [
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G02-GAME"
+      ],
+      "encoding": "Use dependent sums for heterogeneous carriers and a finite edge PMF including self-loops.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "F07-TYPED",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.Types",
+        "names": [
+          "MIPStarRE.QPBT.TypeGraph",
+          "MIPStarRE.QPBT.TypedSampler",
+          "MIPStarRE.QPBT.TypedDecider"
+        ]
+      },
+      "prerequisites": [
+        "F06-CL"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          582
+        ],
+        "label": "sec:types",
+        "original_lines": [
+          3567,
+          4148
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/types.tex"
+      },
+      "statement": "Define type graphs, heterogeneous typed questions/answers, typed samplers and deciders, and their graph-distribution semantics.",
+      "status": "not-started",
+      "title": "Typed samplers, deciders, and graph distributions",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F06-CL"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Perfect construction assumes an exact anticommuting observable pair; rigidity is separated in E02.",
+      "chapter": "02",
+      "consumers": [
+        "G02-GAME"
+      ],
+      "encoding": "Finite row/column and variable types with binary outcomes; the operator solution is explicit.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "F08-MAGIC-GAME",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.MagicSquare",
+        "names": [
+          "MIPStarRE.QPBT.magicSquareGame",
+          "MIPStarRE.QPBT.magicSquareStrategyOfAnticommuting"
+        ]
+      },
+      "prerequisites": [
+        "F03-MEASUREMENT",
+        "F07-TYPED"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          368
+        ],
+        "label": "sec:ms",
+        "original_lines": [
+          4660,
+          5027
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/magic-square.tex"
+      },
+      "statement": "Define the typed Magic Square game, its constraint/variable observables, and the perfect strategy constructed from an anticommuting pair.",
+      "status": "not-started",
+      "title": "Magic Square game and perfect construction",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F03-MEASUREMENT",
+        "F06-CL",
+        "F07-TYPED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The raw game is parameterized by explicit field, dimension, degree, and repetition data.",
+      "chapter": "02",
+      "consumers": [
+        "E04-TENSOR-CODE",
+        "L01-LDT-SOUNDNESS"
+      ],
+      "encoding": "Separate axis-parallel and diagonal line constructors and prove representative invariance.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "F09-LDT-GAME",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ClassicalLDTAdapter",
+        "names": [
+          "MIPStarRE.QPBT.AffineLine",
+          "MIPStarRE.QPBT.linePointDistribution",
+          "MIPStarRE.QPBT.simultaneousIndividualLDT"
+        ]
+      },
+      "prerequisites": [
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F07-TYPED"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          1,
+          398
+        ],
+        "label": "sec:ld-verifier",
+        "original_lines": [
+          4163,
+          4560
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/classical-ldt.tex"
+      },
+      "statement": "Define affine lines, canonical representatives, line-point distributions, the simultaneous individual low-degree verifier, and polynomial answer measurements.",
+      "status": "not-started",
+      "title": "Simultaneous individual low-degree game",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F06-CL",
+        "F07-TYPED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Characteristic two and the fixed self-dual basis.",
+      "chapter": "02",
+      "consumers": [
+        "B01-BINARY"
+      ],
+      "encoding": "Use an explicit finite basis equivalence and tensor reindexing isometries; the paper's factor index j ranges through k, not q, and the final Fourier projector is indexed by a_j, not the summed b_j.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G14"
+      ],
+      "id": "F10-PAULI-BINARY",
+      "integrity": {
+        "lean_assumptions": "A natural L and F01 characteristic-two basis data.",
+        "lean_conclusion": "The same state and operator intertwining identities with corrected j<=k and a_j projector indices.",
+        "paper_assumptions": "q is a power of two, L is an arbitrary tensor length, and the selected field-to-bits bijection is fixed.",
+        "paper_conclusion": "L qudit EPR pairs and Pauli operators map to L*k qubits under local isometries.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Basic.Pauli",
+        "names": [
+          "MIPStarRE.QPBT.pauliQuditToQubit"
+        ]
+      },
+      "prerequisites": [
+        "F05-PAULI"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          122,
+          214
+        ],
+        "label": "lem:pauli-binary",
+        "original_lines": [
+          2070,
+          2162
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/pauli.tex"
+      },
+      "statement": "For every natural tensor length L and a characteristic-two field with the selected basis, give local isometries identifying L q-dimensional EPR pairs and their generalized X/Z measurements with L*log q qubits and tensor Pauli measurements.",
+      "status": "paper-gap",
+      "title": "Qudit-to-qubit Pauli conversion",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F03-MEASUREMENT",
+        "F05-PAULI"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The witness k, Odd k, exact equality q=2^k, and Nat divisibility Dvd.dvd m q are explicit. Positivity and characteristic-two field data are derived rather than added as caller assumptions.",
+      "chapter": "03",
+      "consumers": [
+        "G02-GAME"
+      ],
+      "encoding": "Define a project-owned Parameters structure for q,m,d and Parameters.Admissible params := Exists fun k : Nat => Odd k /\\ params.q = 2^k /\\ Dvd.dvd params.m params.q. This is not an alias of LDT.Parameters.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "G01-PARAMETERS",
+      "integrity": {
+        "lean_assumptions": "A project-owned Parameters value.",
+        "lean_conclusion": "Parameters.Admissible is exactly the existential odd-exponent equality and Nat divisibility conjunction.",
+        "paper_assumptions": "A tuple (q,m,d).",
+        "paper_conclusion": "Admissible means q=2^k for an odd k and m divides q.",
+        "verdict": "exact"
+      },
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.Parameters",
+        "names": [
+          "MIPStarRE.QPBT.Parameters",
+          "MIPStarRE.QPBT.Parameters.Admissible"
+        ]
+      },
+      "prerequisites": [
+        "F01-FIELD"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          60,
+          63
+        ],
+        "label": "def:admissible",
+        "original_lines": [
+          5106,
+          5109
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-game-and-soundness.tex"
+      },
+      "statement": "A tuple (q,m,d) is admissible exactly when q=2^k for an odd natural k and m divides q.",
+      "status": "not-started",
+      "title": "Admissible QPBT parameters",
+      "transitive_definitions": [
+        "F01-FIELD"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Declare universe uType uQuestion uAnswer and require [Fintype] and [DecidableEq] for the type index and every sigma fiber, plus admissible parameters and finite samplers. The definition contains no success or projectivity assumption.",
+      "chapter": "03",
+      "consumers": [
+        "G03-COMPLETENESS",
+        "K04-GAME-COMPLEXITY",
+        "N01-NAIMARK"
+      ],
+      "encoding": "Question and answer carriers are sigma types over the paper's type graph. Explicit finite codecs embed each dependent answer fiber into one uniform finite POVM alphabet and decode it back; every decider edge is a constructor, preventing omitted cases. The question distribution is a PMF, so normalization is bundled.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "G02-GAME",
+      "integrity": {
+        "lean_assumptions": "Parameters and their field model; admissibility is required by consumers, not built into the raw game data.",
+        "lean_conclusion": "A dependent finite game with the same distribution and seven exhaustive check constructors.",
+        "paper_assumptions": "An admissible parameter tuple used to instantiate the sampler and decider.",
+        "paper_conclusion": "The typed question distribution, answer formats, and seven acceptance checks define the QPBT game.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.Verifier",
+        "names": [
+          "MIPStarRE.QPBT.QuestionType",
+          "MIPStarRE.QPBT.Question",
+          "MIPStarRE.QPBT.Answer",
+          "MIPStarRE.QPBT.pauliBasisGame",
+          "MIPStarRE.QPBT.accepts"
+        ]
+      },
+      "prerequisites": [
+        "F02-CODE",
+        "F05-PAULI",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          2,
+          328
+        ],
+        "label": "sec:qld-game",
+        "original_lines": [
+          5048,
+          5374
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-game-and-soundness.tex"
+      },
+      "statement": "Define the heterogeneous question distribution, answer families, conditionally-linear sampler, gamma phase, and the seven verifier checks of the QPBT game.",
+      "status": "not-started",
+      "title": "Typed QPBT game and seven checks",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Exactly admissibility; no soundness, robustness, or extraction premise.",
+      "chapter": "03",
+      "consumers": [],
+      "encoding": "Construct the finite EPR tensor state and each typed measurement explicitly; value one is equality of acceptance probability.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "G03-COMPLETENESS",
+      "integrity": {
+        "lean_assumptions": "Parameters.Admissible params.",
+        "lean_conclusion": "There exists a symmetric projective consistent strategy whose acceptance probability is 1.",
+        "paper_assumptions": "An admissible tuple (q,m,d).",
+        "paper_conclusion": "The Pauli basis test has a value-1 SPCC strategy.",
+        "verdict": "exact"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Game.Completeness",
+        "names": [
+          "MIPStarRE.QPBT.pauliCompleteness"
+        ]
+      },
+      "prerequisites": [
+        "G02-GAME"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          334,
+          526
+        ],
+        "label": "lem:pauli-completeness",
+        "original_lines": [
+          5380,
+          5572
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-game-and-soundness.tex"
+      },
+      "statement": "For every admissible parameter tuple, the QPBT game has a symmetric projective commuting/consistent strategy of value one.",
+      "status": "not-started",
+      "title": "Perfect-strategy completeness",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "R>=4 and the universal constants delivered by S01.",
+      "chapter": "12",
+      "consumers": [
+        "K02-DELTA",
+        "K03-INTRO-COMPLEXITY"
+      ],
+      "encoding": "Use natural ceilings and an explicitly chosen least even c; retain proof fields separately from data.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "K01-CANONICAL",
+      "integrity": {
+        "lean_assumptions": "The S01 constants and natural R with 4<=R.",
+        "lean_conclusion": "A Parameters value defined by the same least-even and ceiling formulas.",
+        "paper_assumptions": "Universal soundness constants and integer R>=4.",
+        "paper_conclusion": "The displayed tuple q=2^k, power-of-two m, d=1.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.canonicalParameters"
+        ]
+      },
+      "prerequisites": [
+        "S01-SOUNDNESS"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          12,
+          23
+        ],
+        "label": "def:introparams",
+        "original_lines": [
+          5651,
+          5662
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-parameters.tex"
+      },
+      "statement": "For R>=4 choose the paper's odd exponent field size q, power-of-two m, and d=1 using the universal soundness constants.",
+      "status": "not-started",
+      "title": "Canonical QPBT parameters",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Integer R>=4 and epsilon in the S01 probability domain.",
+      "chapter": "12",
+      "consumers": [],
+      "encoding": "State inequalities over reals after coercing naturals; make logarithm bases explicit and prove conversions.",
+      "fidelity": "exact",
+      "gap_ids": [],
+      "id": "K02-DELTA",
+      "integrity": {
+        "lean_assumptions": "Natural R with 4<=R and the K01 definition.",
+        "lean_conclusion": "The same three facts with explicit real coercions/logarithm convention.",
+        "paper_assumptions": "Integer R>=4 and the canonical tuple.",
+        "paper_conclusion": "Admissibility, 2^m>=R, and the displayed robustness upper bound.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.canonicalParameters_admissible",
+          "MIPStarRE.QPBT.canonicalRobustness_bound"
+        ]
+      },
+      "prerequisites": [
+        "K01-CANONICAL"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          29,
+          72
+        ],
+        "label": "lem:delta-bound",
+        "original_lines": [
+          5668,
+          5711
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-parameters.tex"
+      },
+      "statement": "Canonical parameters are admissible, satisfy 2^m>=R, and turn QPBT robustness into a universal polylog(R)*epsilon^b plus inverse-polylog(R) bound.",
+      "status": "not-started",
+      "title": "Canonical robustness bound",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "K01-CANONICAL",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The paper's standard binary encoding and random-access/Turing cost convention must be fixed in the Lean boundary.",
+      "chapter": "12",
+      "consumers": [
+        "K04-GAME-COMPLEXITY"
+      ],
+      "encoding": "Separate executable algorithms from asymptotic predicates; choose one explicit machine/cost model before proof completion.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "K03-INTRO-COMPLEXITY",
+      "integrity": {
+        "lean_assumptions": "K01, natural R with 4<=R, a binary input encoding, and an explicitly documented computation model.",
+        "lean_conclusion": "The same tuple-computation bound in the selected faithful model; no finite-field representation claim is attributed to this lemma.",
+        "paper_assumptions": "An integer R>=4 supplied in binary.",
+        "paper_conclusion": "The integer tuple (q,m,d) is computable in polylog(R) time.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.canonicalParameters_complexity"
+        ]
+      },
+      "prerequisites": [
+        "K01-CANONICAL"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          73,
+          84
+        ],
+        "label": "lem:introparams-complexity",
+        "original_lines": [
+          5712,
+          5723
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-parameters.tex"
+      },
+      "statement": "Given the binary representation of an integer R>=4, the canonical integer tuple (q,m,d) is computable in time polylog(R).",
+      "status": "not-started",
+      "title": "Canonical parameter computation complexity",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "K01-CANONICAL",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Odd natural k, the F01 self-dual basis selected by the cited algorithm, binary representations, and a faithful cost model.",
+      "chapter": "12",
+      "consumers": [
+        "K03B-LOW-DEGREE-COMPLEXITY",
+        "K04-GAME-COMPLEXITY"
+      ],
+      "encoding": "Represent the listed algorithms and their bounds in the same explicit machine/cost model used for K03-K04.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "K03A-FIELD-ARITHMETIC",
+      "integrity": {
+        "lean_assumptions": "F01 basis data tied to that algorithm and the explicit cost model.",
+        "lean_conclusion": "The same represented-operation and projection cost bounds.",
+        "paper_assumptions": "Odd k and the self-dual normal basis returned by the efficient-basis algorithm.",
+        "paper_conclusion": "The five listed field operations take poly(k) time and the listed projections take poly(k,n) time.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.fieldArithmetic_complexity"
+        ]
+      },
+      "prerequisites": [
+        "F01-FIELD"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          350,
+          374
+        ],
+        "label": "lem:efficient_arithmetic",
+        "original_lines": [
+          1666,
+          1690
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/finite-fields.tex"
+      },
+      "statement": "For odd k and the algorithmically selected self-dual normal basis of F_(2^k), represented addition, multiplication, multiplication tables, inversion, trace, and complementary-subspace projections have the paper's polynomial-time bounds.",
+      "status": "not-started",
+      "title": "Efficient characteristic-two field arithmetic",
+      "transitive_definitions": [
+        "F01-FIELD"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Admissible q, M=2^m, binary input representations, and the fixed faithful cost model.",
+      "chapter": "12",
+      "consumers": [
+        "K04-GAME-COMPLEXITY"
+      ],
+      "encoding": "Expose an executable evaluator for F02 and count its field operations in the K03A cost model.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "K03B-LOW-DEGREE-COMPLEXITY",
+      "integrity": {
+        "lean_assumptions": "F02 encoding data, K03A field-operation bounds, and the same input/cost conventions.",
+        "lean_conclusion": "The same evaluator cost bound.",
+        "paper_assumptions": "Admissible q, M=2^m, and binary representations of a and x.",
+        "paper_conclusion": "Evaluation of g_a(x) takes poly(M,log q) time.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.lowDegreeEncode_complexity"
+        ]
+      },
+      "prerequisites": [
+        "F02-CODE",
+        "K03A-FIELD-ARITHMETIC"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          68,
+          84
+        ],
+        "label": "lem:ld-encoding-complexity",
+        "original_lines": [
+          1796,
+          1812
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/low-degree-code.tex"
+      },
+      "statement": "For admissible q and M=2^m, evaluating the low-degree encoding g_a(x) from binary representations of a in F_q^M and x in F_q^m takes time poly(M,log q).",
+      "status": "not-started",
+      "title": "Low-degree encoding evaluation complexity",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Canonical R>=4 and the fixed faithful cost model.",
+      "chapter": "12",
+      "consumers": [],
+      "encoding": "Formalize exactly the three displayed complexity items and their executable decider/CL algorithms in the common K03 cost model; do not add sampler or generic question/answer-length claims to this anchor.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [],
+      "id": "K04-GAME-COMPLEXITY",
+      "integrity": {
+        "lean_assumptions": "K01, K03, K03A, K03B, the QPBT decider/CL definitions, binary R, and the explicit cost model.",
+        "lean_conclusion": "Exactly the corresponding three cost bounds in the selected faithful model.",
+        "paper_assumptions": "Integer R>=4 and its canonical parameter tuple.",
+        "paper_conclusion": "The decider is poly(R), CL marginals and factor spaces are polylog(R), and the decider description is constructible in polylog(R).",
+        "verdict": "faithful boundary"
+      },
+      "kind": "lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.CanonicalParameters",
+        "names": [
+          "MIPStarRE.QPBT.pauliBasisGame_complexity"
+        ]
+      },
+      "prerequisites": [
+        "G02-GAME",
+        "K03-INTRO-COMPLEXITY",
+        "K03A-FIELD-ARITHMETIC",
+        "K03B-LOW-DEGREE-COMPLEXITY"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          85,
+          127
+        ],
+        "label": "lem:qld-complexity",
+        "original_lines": [
+          5724,
+          5766
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-parameters.tex"
+      },
+      "statement": "For canonical parameters from R>=4, the QPBT decider runs in poly(R) time, CL marginals and factor spaces are computable in polylog(R) time, and the decider's Turing-machine description is computable from binary R in polylog(R) time.",
+      "status": "not-started",
+      "title": "QPBT decider and CL complexity",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "K01-CANONICAL",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Admissible q, the divisibility needed by this CL sampler, degree/code-distance bounds, and 0<=epsilon<=1.",
+      "chapter": "08",
+      "consumers": [
+        "R02-AXIS-LDT"
+      ],
+      "encoding": "Correct the Reed-Solomon tuple to length q, dimension d+1, distance q-d; encode sampler coordinates explicitly.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G10"
+      ],
+      "id": "L01-LDT-SOUNDNESS",
+      "integrity": {
+        "lean_assumptions": "The same success premise plus the field and divisibility data used in the paper's own sampler definition.",
+        "lean_conclusion": "The same conclusion for the exactly defined game and corrected code tuple.",
+        "paper_assumptions": "A strategy for the simultaneous LDT succeeds with probability at least 1-epsilon.",
+        "paper_conclusion": "A projective global polynomial measurement consistent with points.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ClassicalLDTAdapter",
+        "names": [
+          "MIPStarRE.QPBT.simultaneousIndividualLDTSoundness"
+        ]
+      },
+      "prerequisites": [
+        "E04-TENSOR-CODE",
+        "F09-LDT-GAME"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          399,
+          443
+        ],
+        "label": "lem:ld-soundness",
+        "original_lines": [
+          4561,
+          4605
+        ],
+        "path": "references/2001.04383v3/sections/dependencies/classical-ldt.tex"
+      },
+      "statement": "Under the admissible-field and sampler-dimension hypotheses used by the proof, high simultaneous individual-LDT success produces a projective global low-individual-degree polynomial measurement with polynomial consistency error.",
+      "status": "paper-gap",
+      "title": "Classical simultaneous individual LDT soundness",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F06-CL",
+        "F07-TYPED",
+        "F09-LDT-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Reuse the explicit uQuestion/uAnswer universes and their [Fintype]/[DecidableEq] instances, plus the bundled normalized state only. Projectivity is a conclusion, never a public strategy assumption.",
+      "chapter": "04",
+      "consumers": [
+        "A03-WIN",
+        "S01-SOUNDNESS"
+      ],
+      "encoding": "Use the G02 sigma codecs to view every dependent family as a MIPStarRE.Quantum.Measurement over one uniform finite alphabet, then construct one auxiliary finite carrier per side and prove pointwise correlation preservation.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G07"
+      ],
+      "id": "N01-NAIMARK",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Naimark",
+        "names": [
+          "MIPStarRE.QPBT.simultaneousLocalNaimark"
+        ]
+      },
+      "prerequisites": [
+        "F04-DISTANCE",
+        "G02-GAME"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          2,
+          16
+        ],
+        "label": "sec:commutation",
+        "original_lines": [
+          13197,
+          13211
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-strategies.tex"
+      },
+      "statement": "Dilate all finite local QPBT POVM families simultaneously to projective families on fixed auxiliaries, preserving every two-party game correlation and composing with later isometries.",
+      "status": "paper-gap",
+      "title": "Simultaneous local Naimark reduction",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "0<eta<=1 and the actual doubly averaged premise; no fixed-fiber premise is assumed.",
+      "chapter": "07",
+      "consumers": [
+        "A08-XZ-LINES"
+      ],
+      "encoding": "Finite PMF Markov bound, a decidable good-fiber predicate, and a canonical trivial exact representation on bad fibers.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G08"
+      ],
+      "id": "R01-FIBER",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.FiberLinearity",
+        "names": [
+          "MIPStarRE.QPBT.averageToFiberLinearity"
+        ]
+      },
+      "prerequisites": [
+        "A07-JOINT",
+        "E03-LINEARITY"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          117,
+          153
+        ],
+        "label": "eq:qld-r-52",
+        "original_lines": [
+          13835,
+          13871
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-combine-xz.tex"
+      },
+      "statement": "From average approximate linearity over fibers, choose good fibers at threshold eta, apply quantum linearity there, choose arbitrary exact representations on bad fibers, and bound average error by O(delta/eta+eta).",
+      "status": "paper-gap",
+      "title": "Average-to-fiber linearity repair",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "The direct theorem has no n|q premise; the equivalence theorem explicitly assumes n|q.",
+      "chapter": "08",
+      "consumers": [
+        "A12-GLOBAL"
+      ],
+      "encoding": "Axis indices are Fin n rather than field elements; set n=2*m+2 at the QPBT consumer.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G11"
+      ],
+      "id": "R02-AXIS-LDT",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.ClassicalLDTAdapter",
+        "names": [
+          "MIPStarRE.QPBT.directAxisLDTSoundness",
+          "MIPStarRE.QPBT.directAxisLDT_equiv_cl"
+        ]
+      },
+      "prerequisites": [
+        "L01-LDT-SOUNDNESS"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          300,
+          321
+        ],
+        "label": "lem:qld-4-7",
+        "original_lines": [
+          14306,
+          14327
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "State and prove the axis-parallel LDT over Fin n without n dividing q, and prove equivalence to the CL-indexed theorem when divisibility is available.",
+      "status": "paper-gap",
+      "title": "Direct finite-axis LDT adapter",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F06-CL",
+        "F07-TYPED",
+        "F09-LDT-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Nonemptiness of each conditioning event is proved from finite-field cardinality.",
+      "chapter": "09",
+      "consumers": [
+        "A11-SUBLINES"
+      ],
+      "encoding": "Use a finite PMF conditioned on a nonempty support event, with axes indexed by Fin (2*m+2).",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G12"
+      ],
+      "id": "R03-RESTRICTED",
+      "integrity": null,
+      "kind": "definition",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.RestrictedLines",
+        "names": [
+          "MIPStarRE.QPBT.restrictedAxisLineDistribution"
+        ]
+      },
+      "prerequisites": [
+        "A10-COMBINED-LINE"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          71,
+          95
+        ],
+        "label": "def:ith-restricted-line",
+        "original_lines": [
+          14077,
+          14101
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "Define each restricted axis-parallel line distribution as a normalized finite conditional distribution with explicit support and marginal formulas.",
+      "status": "paper-gap",
+      "title": "Restricted axis-line distributions",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Only A09-A11 and their established average inequalities.",
+      "chapter": "09",
+      "consumers": [
+        "A12-GLOBAL"
+      ],
+      "encoding": "Every expectation names its PMF and every event complement is expressed explicitly.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G12"
+      ],
+      "id": "R04-RESTRICTED-CLAIMS",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.RestrictedLines",
+        "names": [
+          "MIPStarRE.QPBT.restrictedClaimOne",
+          "MIPStarRE.QPBT.restrictedClaimTwo",
+          "MIPStarRE.QPBT.restrictedClaimThree"
+        ]
+      },
+      "prerequisites": [
+        "A09-COMBINED-POINT",
+        "A11-SUBLINES"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          173,
+          299
+        ],
+        "label": "claim:17-1",
+        "original_lines": [
+          14179,
+          14305
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-apply-classical-ldt.tex"
+      },
+      "statement": "Prove Claims A.18-A.20 with corrected point/basis indices, retained expectations, mixture weights, and the complement of the bad-event estimate.",
+      "status": "paper-gap",
+      "title": "Restricted-line consistency claims",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Proved nonnegativity and upper bounds for all errors; this node is a theorem, never an input to public soundness.",
+      "chapter": "11",
+      "consumers": [
+        "S01-SOUNDNESS"
+      ],
+      "encoding": "normExtraction_ofSquared converts the squared state premise in SquaredRealizes to the unsquared state field of Realizes; the four squared-family fields are transported at the reparameterized error. Use Real.sqrt monotonicity, positive contractions, Real.rpow for every nonintegral exponent, and an explicit split between small and large error regimes. The robustness expression uses Real.rpow epsilon b and negative-exponent Real.rpow terms after coercing q and 2^(m*d) to Real.",
+      "fidelity": "repaired-internal",
+      "gap_ids": [
+        "G05"
+      ],
+      "id": "R05-ROBUSTNESS",
+      "integrity": null,
+      "kind": "internal-lemma",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Analysis.Robustness",
+        "names": [
+          "MIPStarRE.QPBT.normExtraction_ofSquared",
+          "MIPStarRE.QPBT.qpbtRobustness_reparameterize"
+        ]
+      },
+      "prerequisites": [
+        "A15-UNITARY"
+      ],
+      "public": false,
+      "source": {
+        "generated_lines": [
+          255,
+          463
+        ],
+        "label": "lem:qld-unitary",
+        "original_lines": [
+          14708,
+          14916
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-separate-xz-conclude.tex"
+      },
+      "statement": "Consume A.24's SquaredRealizes certificate through normExtraction_ofSquared, producing the public unsquared Realizes bounds while preserving the universal polynomial robustness form by rechosen constants and exponent.",
+      "status": "paper-gap",
+      "title": "Squared-distance to norm robustness",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Admissible parameters, normalized arbitrary-POVM strategy, 0<=epsilon<=1, and success >=1-epsilon. No bridge, extraction, witness, or projectivity assumption.",
+      "chapter": "11",
+      "consumers": [
+        "B01-BINARY",
+        "K01-CANONICAL",
+        "S02-APPENDIX-SOUNDNESS"
+      ],
+      "encoding": "Return the transparent BipartiteIsometry and Realizes certificate, use explicit Alice/Bob suffixes, and order robustness arguments epsilon,m,d,q. Encode all real exponents with Real.rpow rather than Nat/Int power notation.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G04",
+        "G05",
+        "G07"
+      ],
+      "id": "S01-SOUNDNESS",
+      "integrity": {
+        "lean_assumptions": "The same, with explicit finite carriers, normalization, and 0<=epsilon<=1 as faithful boundary data.",
+        "lean_conclusion": "The same state and measurement conclusions with normalized suffixes and one argument order.",
+        "paper_assumptions": "Admissible (q,m,d) and a strategy succeeding with probability at least 1-epsilon.",
+        "paper_conclusion": "Local isometries extract the EPR tensor state in norm and transform both total Pauli measurement families within the displayed robustness.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Soundness",
+        "names": [
+          "MIPStarRE.QPBT.pauliSoundness"
+        ]
+      },
+      "prerequisites": [
+        "N01-NAIMARK",
+        "R05-ROBUSTNESS"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          533,
+          547
+        ],
+        "label": "thm:pauli",
+        "original_lines": [
+          5579,
+          5593
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/qpbt-game-and-soundness.tex"
+      },
+      "statement": "There are universal a>=1 and 0<b<1 such that every epsilon-successful strategy for an admissible QPBT game admits local isometries extracting 2^m q-dimensional EPR pairs and mapping total X/Z measurements close to ideal Pauli measurements with robustness a(md)^a(epsilon^b+q^-b+2^-bmd).",
+      "status": "paper-gap",
+      "title": "QPBT soundness theorem",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    },
+    {
+      "boundary_hypotheses": "Identical to S01.",
+      "chapter": "11",
+      "consumers": [],
+      "encoding": "Implement as a theorem alias after independently checking statement equality, not as a second proof surface.",
+      "fidelity": "faithful-boundary",
+      "gap_ids": [
+        "G04",
+        "G05"
+      ],
+      "id": "S02-APPENDIX-SOUNDNESS",
+      "integrity": {
+        "lean_assumptions": "Definitionally the assumptions of S01.",
+        "lean_conclusion": "Definitionally the conclusion of S01.",
+        "paper_assumptions": "The assumptions of Theorem 7.14.",
+        "paper_conclusion": "The conclusion of Theorem 7.14.",
+        "verdict": "faithful boundary"
+      },
+      "kind": "theorem",
+      "lean": {
+        "module": "MIPStarRE.QPBT.Soundness",
+        "names": [
+          "MIPStarRE.QPBT.pauliSoundnessAppendix"
+        ]
+      },
+      "prerequisites": [
+        "S01-SOUNDNESS"
+      ],
+      "public": true,
+      "source": {
+        "generated_lines": [
+          14,
+          28
+        ],
+        "label": "thm:pauli-appendix",
+        "original_lines": [
+          13045,
+          13059
+        ],
+        "path": "references/2001.04383v3/sections/qpbt/appendix-statement-roadmap.tex"
+      },
+      "statement": "Restate Theorem 7.14 verbatim at the Appendix A proof boundary.",
+      "status": "paper-gap",
+      "title": "Appendix A.1 soundness restatement",
+      "transitive_definitions": [
+        "F01-FIELD",
+        "F02-CODE",
+        "F03-MEASUREMENT",
+        "F04-DISTANCE",
+        "F05-PAULI",
+        "F06-CL",
+        "F07-TYPED",
+        "F08-MAGIC-GAME",
+        "F09-LDT-GAME",
+        "G01-PARAMETERS",
+        "G02-GAME",
+        "R03-RESTRICTED"
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "source": "metadata/nodes.json",
+  "source_sha256": "05567449495f297d5f6c39687f01ada6f6dab420c54da2fc7181f6afc097c735",
+  "targets": {
+    "binary": "B01-BINARY",
+    "canonical_complexity": "K04-GAME-COMPLEXITY",
+    "completeness": "G03-COMPLETENESS",
+    "soundness": "S01-SOUNDNESS"
+  },
+  "topological_order": [
+    "F01-FIELD",
+    "F02-CODE",
+    "A01-INDICATOR",
+    "F03-MEASUREMENT",
+    "F04-DISTANCE",
+    "A02-PRELIMINARIES",
+    "E01-ORTHO",
+    "E02-MAGIC-SQUARE",
+    "E03-LINEARITY",
+    "F05-PAULI",
+    "F06-CL",
+    "F07-TYPED",
+    "F08-MAGIC-GAME",
+    "F09-LDT-GAME",
+    "E04-TENSOR-CODE",
+    "F10-PAULI-BINARY",
+    "G01-PARAMETERS",
+    "G02-GAME",
+    "G03-COMPLETENESS",
+    "K03A-FIELD-ARITHMETIC",
+    "K03B-LOW-DEGREE-COMPLEXITY",
+    "L01-LDT-SOUNDNESS",
+    "N01-NAIMARK",
+    "A03-WIN",
+    "A04-WIN-OBS",
+    "A05-EXPANDED",
+    "A06-EXPANDED-LINES",
+    "A07-JOINT",
+    "A09-COMBINED-POINT",
+    "R01-FIBER",
+    "A08-XZ-LINES",
+    "A10-COMBINED-LINE",
+    "R02-AXIS-LDT",
+    "R03-RESTRICTED",
+    "A11-SUBLINES",
+    "R04-RESTRICTED-CLAIMS",
+    "A12-GLOBAL",
+    "A13-EXACT-PAULI",
+    "A14-PAULI-HELPER",
+    "A15-UNITARY",
+    "R05-ROBUSTNESS",
+    "S01-SOUNDNESS",
+    "B01-BINARY",
+    "K01-CANONICAL",
+    "K02-DELTA",
+    "K03-INTRO-COMPLEXITY",
+    "K04-GAME-COMPLEXITY",
+    "S02-APPENDIX-SOUNDNESS"
+  ]
+}

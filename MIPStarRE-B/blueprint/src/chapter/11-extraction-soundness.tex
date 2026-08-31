@@ -1,0 +1,15 @@
+\BlueprintChapter{Extraction, Robustness, and Public Soundness}{soundness}
+
+A.24 retains its squared-norm conclusion. A separate proved theorem performs
+the square-root and universal-constant reparameterization before the public
+theorem. The public theorem accepts arbitrary POVMs and has no bridge or
+extraction premise.
+
+The extraction API exposes a transparent pair of local isometries and its
+conjugation action.  Its \texttt{SquaredRealizes} certificate preserves A.24's
+squared state norm and four separate squared-family bounds (Alice/Bob, X/Z).
+The robustness bridge converts it to the public \texttt{Realizes} certificate,
+whose state bound is unsquared.  Nonintegral robustness powers are represented
+by \texttt{Real.rpow}; they are never overloaded natural or integer powers.
+
+\input{src/generated/chapter-11-entries.tex}
