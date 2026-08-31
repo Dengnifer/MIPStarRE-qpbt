@@ -1,0 +1,6 @@
+[submodule "MIPStarRE-A"]
+	path = MIPStarRE-A
+	url = https://github.com/Dengnifer/MIPStarRE-A.git
+[submodule "MIPStarRE-B"]
+	path = MIPStarRE-B
+	url = https://github.com/Dengnifer/MIPStarRE-B.git
